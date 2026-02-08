@@ -1,0 +1,19 @@
+{
+  "name": "kimi-cursor-proxy",
+  "version": "1.0.0",
+  "description": "OpenAI to Anthropic format proxy for Kimi Coding API in Cursor",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": ["kimi", "cursor", "proxy", "anthropic", "openai"],
+  "author": "Wxc1362451456",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1"
+  }
+}
