@@ -6,7 +6,8 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const KIMI_API_BASE = 'https://api.kimi.com/coding/v1';
+const KIMI_API_BASE = process.env.KIMI_API_BASE || 'https://api.kimi.com/coding/v1';
+const KIMI_MODEL = process.env.KIMI_MODEL || 'kimi-for-coding';
 
 // Middleware
 app.use(cors());
@@ -31,7 +32,7 @@ function convertOpenAItoAnthropic(openaiReq) {
 
   // Build Anthropic request
   const anthropicReq = {
-    model: openaiReq.model || 'kimi-k2.5',
+    model: KIMI_MODEL, // openaiReq.model || 'kimi-k2.5',
     max_tokens: openaiReq.max_tokens || 4096,
     messages: anthropicMessages
   };
